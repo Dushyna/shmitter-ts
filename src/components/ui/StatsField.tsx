@@ -15,7 +15,8 @@ const StatsField = ({name, value, field}: Props) => {
             onClick={() => {
                 changeStats(increment, value,field);
             }}
-            onContextMenu={() => {
+            onContextMenu={(e) => {
+                e.preventDefault();
                 changeStats(decrement, value,field);
 
             }}
