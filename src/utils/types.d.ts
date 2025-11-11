@@ -6,7 +6,6 @@ export interface IContext {
         following: number},
     changeAvatar(url:string):void,
     changeName(name:string):void,
-    changeStats(callback: (value: number) => number, field: number, fieldName: keyof StatsProps):void,
-    increment(value: number):number,
-    decrement(value: number):number
+    changeStats( fieldName: keyof StatsProps,sum:number):void,
+
 }
