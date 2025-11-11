@@ -36,7 +36,13 @@ function App() {
     const changeStats = (callback: (value: number) => number, field: number, fieldName: keyof StatsProps) => {
         const newStats1 = callback(field);
         if (newStats1 > -1) {
-            setStats({...stats, [fieldName]: newStats1})
+            setStats(prevState => ({...prevState, [fieldName]: newStats1}))
+            if (Math.random() > 0.5) {
+                const newStats1 = callback(field);
+
+                setStats(prevState => ({...prevState, [fieldName]: newStats1}))
+
+            }
         }
     }
 
