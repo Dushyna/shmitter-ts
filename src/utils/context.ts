@@ -15,11 +15,6 @@ export const SchmitterContext = createContext<IContext>({
     changeName() {
     },
     changeStats() {
-    },
-    increment(value: number) {
-        return ++value;
-    },
-    decrement(value: number) {
-        return --value;
     }
+
 });

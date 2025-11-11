@@ -9,15 +9,15 @@ interface Props {
 }
 
 const StatsField = ({name, value, field}: Props) => {
-    const { changeStats,increment,decrement} = useContext(SchmitterContext);
+    const { changeStats} = useContext(SchmitterContext);
     return (
         <div
             onClick={() => {
-                changeStats(increment, value,field);
+                changeStats(field,1);
             }}
             onContextMenu={(e) => {
                 e.preventDefault();
-                changeStats(decrement, value,field);
+                changeStats(field, -1);
 
             }}
 
